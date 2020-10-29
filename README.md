@@ -1,10 +1,6 @@
-# Invader.Finance
+# ETHEREUM SPACE WAR
 
-Yield farming tool for generating revenue using 0xBTC tokens, taking advantage of Uniswap Liquidity Pooling fees.
-
-This dapp is deployed at invader.finance
-
-
+The cult classic sweeping the nation
 
 ## Project setup
 
@@ -13,6 +9,4 @@ npm install
 npm run serve
 ```
 
-
-## Development Checklist
  
