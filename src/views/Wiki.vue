@@ -1,15 +1,15 @@
 <template>
-  <div class="about">
+  <div class="about" >
 
     <nav id="header" class="w-full z-10 pin-t">
 
     	<div id="progress" class="h-1 z-20 pin-t" style="background:linear-gradient(to right, #4dc0b5 var(--scroll), transparent 0);"></div>
 
-    		<div class="w-full mx-auto flex flex-wrap items-center justify-between mt-0 py-3 bg-white px-4">
+    		<div class="w-full mx-auto flex flex-wrap items-center justify-between mt-0 py-3  px-4" style="background-color:#111;">
 
     			<div class="pl-4">
-    				<a class="text-black text-base no-underline hover:no-underline font-extrabold text-xl"  href="#">
-    					0xBTC Matic Wallet
+    				<a class="text-black text-base no-underline hover:no-underline font-extrabold text-xl text-yellow-400"  href="#">
+    					Ethereum Space War Wiki
     				</a>
           </div>
 
@@ -21,26 +21,32 @@
 
 
 
-      <div class="flex mb-4">
-        <div class="w-1/3 bg-gray-300 overflow-y-scroll ">
-          <div class="m-6 p-4 bg-gray-100">
+      <div class="flex mb-4   " style="min-height:450px">
+        <div class="w-1/3 bg-gray-800 overflow-y-scroll text-white ">
+          <div class="m-6 p-4 bg-gray-900">
 
             <ul>
-              <li> <a href="#" @click="setContent('purpose')"> Purpose Statement </a> </li>
+              <li> <a href="#" @click="setContent('thegame')"> The Game </a> </li>
               <li> <a href="#" @click="setContent('connecting')"> Connecting with Metamask </a> </li>
           </ul>
 
           </div>
         </div>
-        <div class="w-2/3 bg-gray-300  ">
-          <div class="m-6 p-4 bg-gray-100">
+        <div class="w-2/3 bg-gray-800 text-white " >
+          <div class="m-6 p-4 bg-gray-900">
 
 
-            <div v-if="activeContent == 'purpose'">
-              <h3 class="text-lg"> 0xBTC Matic Wallet </h3>
+            <div v-if="activeContent == 'thegame'">
+              <h3 class="text-lg">  Ethereum Space War </h3>
               <br>
 
-              <p> The purpose of this application ('The Dapp') is to provide a simple front-end user experience that allows users to transfer ERC20 tokens from the Ethereum Mainnet blockchain to the Matic blockchain, a 'Layer 2' network with lower transacting fees and higher bandwidth.  These tokens can also be moved back from the Matic chain back to Ethereum. </p>
+              <p>
+                Ethereum Space War is a 3D Space MMORPG that is played in a browser such as Chrome or Firefox.
+                </p>
+                <br>
+                <p>
+                   In order to connect to the game, you will need to download the Ethereum Wallet plugin 'Metamask' in order to log into the game and so that you can interact with the in-game currency named '0xBTC'.
+               </p>
 
             </div>
 
@@ -48,7 +54,7 @@
               <h3 class="text-lg"> Getting Connected </h3>
               <br>
 
-              <p> To connect to this Dapp, you will need a Web3 compatible browser or extension such as Metamask. (<a href="https://metamask.io" target="_blank" >https://metamask.io</a>)    </p>
+              <p> To connect to this Application, you will need a Web3 compatible browser or extension such as Metamask. (<a href="https://metamask.io" target="_blank" >https://metamask.io</a>)    </p>
               <br>
               <p> Once you have installed Metamask, you will need to add a Custom RPC for the Matic Network so that you will be able to digitally sign transactions for the Matic Network.   To do this, click on the 'Networks' dropdown at the very top of Metamask and change it from 'Main Ethereum Network' to 'Custom RPC' and use the following information: </p>
                 <br>
@@ -69,20 +75,22 @@
         </div>
       </div>
 
-
+      <Footer />
 
   </div>
 </template>
 
 
 <script>
+import Footer from './Footer.vue'
 
 export default {
-  name: 'Docs',
+  name: 'Wiki',
   props: [],
+  components:{Footer},
   data() {
     return {
-      activeContent: 'purpose'
+      activeContent: 'thegame'
     }
   },
   methods: {

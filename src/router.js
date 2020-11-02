@@ -1,10 +1,8 @@
 import Vue from 'vue'
 import Router from 'vue-router'
 import Home from './views/Home.vue'
-import DropdownExample from './views/DropdownExample.vue'
-import ModalExample from './views/ModalExample.vue'
-import Login from './views/Login.vue'
-import Docs from './views/Docs.vue'
+ 
+import Wiki from './views/Wiki.vue'
 
 Vue.use(Router)
 
@@ -17,15 +15,11 @@ export default new Router({
       name: 'home',
       component: Home
     },
+
     {
-      path: '/login',
-      name: 'login',
-      component: Login,
-    },
-    {
-      path: '/docs',
-      name: 'docs',
-      component: Docs,
+      path: '/wiki',
+      name: 'wiki',
+      component: Wiki,
     },
   ]
 })

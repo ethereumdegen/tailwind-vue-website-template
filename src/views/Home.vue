@@ -1,102 +1,78 @@
 <template>
 <div>
 
-<nav id="header" class="w-full z-10 pin-t">
 
-	<!--
+<Navbar />
 
-	<div id="progress" class="h-1 z-20  " style="background: linear-gradient(to right, rgb(0, 0, 0), #edfffdd1);"></div>
--->
+<div class="w-full flex flex-wrap w-full my-8 pt-2 bg-gray-800" >
+	<div class="pt-6 md:pt-0  md:flex-1 md:order-last">
 
-		<div class="w-full mx-auto flex flex-wrap items-center justify-between mt-0 py-3 bg-gray-700 px-4">
+		<carousel :per-page="1" :autoplay="true" :navigationEnabled="false" :paginationEnabled="false">
 
-			<div class="pl-4">
-				<img  src="@/assets/img/invader_sm.png" alt="ETH avatar" class="rounded-full h-6 w-6 inline-block">
-
-
-				<a class="text-green-400 text-base no-underline hover:no-underline font-extrabold text-xl"  href="#">
-					Invader.Finance
-				</a>
-      </div>
+			<slide>
+						<img src="@/assets/img/promo1.png" class="w-full"  />
+			</slide>
 
 
-			<div class="  flex items-center w-auto mt-2 lg:mt-0 bg-grey-lightest md:bg-transparent z-20" id="nav-content">
-				<div class="  lg:flex justify-end flex-1 items-center">
-					<MetamaskDropdown
-            :acctAddress= "activeAccountAddress"
-						:providerNetworkID= "providerNetworkID"
-          />
-				</div>
+			<slide>
+				 		<img src="@/assets/img/production1.png" class="w-full"  />
+			</slide>
+
+			<slide>
+
+					<img src="@/assets/img/starmap1.png"  class="w-full" />
+
+			</slide>
+			</carousel>
+
+	</div>
+	<div class="w-full p-6 pb-12 md:p-12 md:w-5/12 flex justify-center items-center relative">
+		<div class="w-full relative text-center py-12 px-12 md:p-0 md:text-right">
+
+			<div class='text-gray-200 text-lg'>
+			   Browser-based Space MMO
 			</div>
+
+			<div class='text-gray-400'>
+				 Cryptocurrency fuels the engines to war
+			</div>
+
+
+			<div class="items-center p-6">
+				<a href="http://amber.ethereumspacewar.com" class="inline-block bg-yellow-500 text-black px-6 py-3 font-bold text-md hover:bg-gray-400"  >
+					Play the Alpha
+				</a>
+			</div>
+		<!--
+			<h1 class="text-2xl mb-4">You abused the gift of Magic.</h1>
+			<p class="leading-loose tracking-wide text-gray-700">The Void comes to rid you your planet .</p>
+		-->
+
 		</div>
-	</nav>
+	</div>
+</div>
 
 
 
-  <div class="flex mb-4">
 
-    <div class="w-full bg-gray-300  ">
-      <div class="m-6 p-4 bg-gray-100">
-
-				<TransactionForm
-				ref="txform"
-				:acctAddress= "activeAccountAddress"
-				:activeNetwork= "network"
-				:providerNetworkID= "providerNetworkID"
-				:assetName= "assetName"
-				/>
-
-
-				<ul class="flex m-6">
-				  <li class="flex-1 mr-2">
-				    <a @click="setNetwork('ethereum')" :class="network=='ethereum' ? 'bg-blue-500  text-white' : 'bg-transparent hover:border-gray-200 hover:bg-gray-200 text-gray-500'" class="text-center block border border-blue-500 rounded py-2 px-4 " href="#">Ethereum Network</a>
-				  </li>
-				  <li class="flex-1 mr-2">
-				    <a @click="setNetwork('matic')" :class="network=='matic' ? 'bg-blue-500  text-white' : 'bg-transparent hover:border-gray-200 hover:bg-gray-200 text-gray-500'" class="text-center block border border-blue-500 rounded py-2 px-4 " href="#">Matic Network</a>
-				  </li>
-				</ul>
-
-				<h3 class="text-lg font-bold">Your Assets</h3>
-
-
-				<div class="container mt-8">
-
-					<a href="#" @click="selectAsset('0xBTC')" :class="assetName=='0xBTC' ? 'bg-blue-400 text-white' : 'bg-transparent text-blue-700'" class="flex width-full  hover:bg-blue-500  font-semibold hover:text-white py-2 px-4 border border-blue-500 hover:border-transparent rounded ">
-						<div class="text-md w-1/2"> 0xBTC </div>
-						<div class="text-md w-1/2 text-right">   </div>
-
-					</a>
-
-					<a href="#" @click="selectAsset('Dai')" :class="assetName=='Dai' ? 'bg-blue-400 text-white' : 'bg-transparent text-blue-700'" class="flex width-full  hover:bg-blue-500  font-semibold hover:text-white py-2 px-4 border border-blue-500 hover:border-transparent rounded ">
-						<div class="text-md w-1/2"> Dai </div>
-						<div class="text-md w-1/2 text-right">   </div>
-
-					</a>
-					<a href="#" @click="selectAsset('Matic')" :class="assetName=='Matic' ? 'bg-blue-400 text-white' : 'bg-transparent text-blue-700'" class="flex width-full  hover:bg-blue-500  font-semibold hover:text-white py-2 px-4 border border-blue-500 hover:border-transparent rounded ">
-						<div class="text-md w-1/2"> Matic </div>
-						<div class="text-md w-1/2 text-right">   </div>
-
-					</a>
-
-				</div>
-
-	  </div>
-    </div>
-  </div>
-
-
-
+<Footer />
 
 </div>
 </template>
 
 
 <script>
-import MetamaskDropdown from './MetamaskDropdown.vue'
-import TransactionForm from './TransactionForm.vue'
-import Web3Helper from '../js/web3-helper.js'
-import CryptoAssets from '../js/cryptoassets.js'
-import MaticHelper from '../js/matic-helper.js'
+import Vue from 'vue';
+import VueCarousel from 'vue-carousel';
+Vue.use(VueCarousel);
+
+
+import { Carousel, Slide } from 'vue-carousel';
+
+import Navbar from './Navbar.vue'
+
+import Footer from './Footer.vue'
+
 
 const Web3 = require('web3');
 
@@ -105,7 +81,7 @@ const Web3 = require('web3');
 export default {
   name: 'Home',
   components: {
-     MetamaskDropdown,TransactionForm
+     Navbar, Carousel, Slide, Footer
   },
   data () {
     return {
@@ -118,61 +94,10 @@ export default {
   created () {
 
 
-     this.checkSignedIn()
-
-
-
-			if ( window.ethereum.selectedAddress) {
-				 Web3Helper.init();
-	      	this.readWeb3Data();  //opens the window
-		 }
 
 
   },
   methods: {
-   async checkSignedIn () {
-
-
-
-		await window.ethereum
-
-		console.log(window.ethereum)
-
-		 if (!window.ethereum.selectedAddress) {
-			 this.$router.replace('/login');
-			 return;
-		}
-
-
-
-    },
-   async readWeb3Data () {
-     var accounts = await Web3Helper.getConnectedAccounts();
-
-		 this.providerNetworkID = await Web3Helper.getProviderNetworkID();
-
-     this.activeAccountAddress = accounts[0]
-
-		 //this.updateBalances()
-   },
-	 async setNetwork(networkName)
-	 {
-		 this.network = networkName;
-
-		 // await this.updateBalances()
-
-		 this.$refs.txform.updateAll()
-	 },
-	 async selectAsset(assetName)
-	 {
-		 this.assetName = assetName;
-
-
- 		this.$refs.txform.updateAll()
-
-		 // await this.updateBalances()
-	 },
-
 
 
 

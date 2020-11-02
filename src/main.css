@@ -1,3 +1,10 @@
+
+
+body {
+  background-color: #111;
+}
+
+
 .loader {
   border: 3px solid #f3f3f3; /* Light grey */
   border-top: 3px solid #3498db; /* Blue */
@@ -10,4 +17,25 @@
 @keyframes spin {
   0% { transform: rotate(0deg); }
   100% { transform: rotate(360deg); }
+}
+
+
+/* -----
+SVG Icons - svgicons.sparkk.fr
+----- */
+
+.svg-icon {
+  width: 2em;
+  height: 2em; 
+}
+
+.svg-icon path,
+.svg-icon polygon,
+.svg-icon rect {
+  fill: #ddd;
+}
+
+.svg-icon circle {
+  stroke: #ddd;
+  stroke-width: 1;
 }

@@ -1,11 +1,12 @@
 {
-  "name": "matic-0xbtc-wallet",
-  "description": "Web wallet for 0xBTC for the Ethereum and Matic Networks",
+  "name": "ethereumspacewar-web",
+  "description": "Marketing Website Frontend",
   "version": "0.1.0",
   "private": true,
   "scripts": {
-    "serve": "vue-cli-service serve",
+    "dev": "vue-cli-service serve",
     "build": "vue-cli-service build",
+    "express": "node express.js",
     "lint": "vue-cli-service lint"
   },
   "dependencies": {
@@ -14,6 +15,7 @@
     "portal-vue": "^2.1.0",
     "tailwindcss": "^1.0.0-beta.4",
     "vue": "^2.6.6",
+    "vue-carousel": "^0.18.0",
     "vue-router": "^3.0.1",
     "web3": "^1.2.11"
   },
