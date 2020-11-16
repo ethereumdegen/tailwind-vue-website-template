@@ -7,7 +7,7 @@
       <router-link class="font-semibold text-gray-700 hover:underline" to="/wiki">Wiki</router-link>
     </div>
     <div class="mt-2">
-      <a href="https://github.com/ethereumspacewar" class="text-sm font-semibold text-gray-600 hover:underline">
+      <a href="https://github.com/admazzola/tailwind-vue-website-template" class="text-sm font-semibold text-gray-600 hover:underline">
         Source on GitHub
       </a>
     </div>
@@ -21,7 +21,7 @@
     props: [ ],
     data() {
       return {
-     
+
       }
     },
     methods: {

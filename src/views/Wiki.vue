@@ -9,7 +9,7 @@
 
     			<div class="pl-4">
     				<a class="text-black text-base no-underline hover:no-underline font-extrabold text-xl text-yellow-400"  href="#">
-    					Ethereum Space War Wiki
+    				 Wiki
     				</a>
           </div>
 
@@ -26,8 +26,8 @@
           <div class="m-6 p-4 bg-gray-900">
 
             <ul>
-              <li> <a href="#" @click="setContent('thegame')"> The Game </a> </li>
-              <li> <a href="#" @click="setContent('connecting')"> Connecting with Metamask </a> </li>
+              <li> <a href="#" @click="setContent('topic1')"> Topic1 </a> </li>
+              <li> <a href="#" @click="setContent('topic2')"> Topic2 </a> </li>
           </ul>
 
           </div>
@@ -36,41 +36,24 @@
           <div class="m-6 p-4 bg-gray-900">
 
 
-            <div v-if="activeContent == 'thegame'">
-              <h3 class="text-lg">  Ethereum Space War </h3>
+            <div v-if="activeContent == 'topic1'">
+              <h3 class="text-lg">  Topic1 </h3>
               <br>
 
               <p>
-                Ethereum Space War is a 3D Space MMORPG that is played in a browser such as Chrome or Firefox.
+                hi
                 </p>
-                <br>
-                <p>
-                   In order to connect to the game, you will need to download the Ethereum Wallet plugin 'Metamask' in order to log into the game and so that you can interact with the in-game currency named '0xBTC'.
-               </p>
+
 
             </div>
 
-            <div v-if="activeContent == 'connecting'">
-              <h3 class="text-lg"> Getting Connected </h3>
+            <div v-if="activeContent == 'topic2'">
+              <h3 class="text-lg"> Topic2 </h3>
               <br>
 
-              <p> To connect to this Application, you will need a Web3 compatible browser or extension such as Metamask. (<a href="https://metamask.io" target="_blank" >https://metamask.io</a>)    </p>
-              <br>
-              <p> Once you have installed Metamask, you will need to add a Custom RPC for the Matic Network so that you will be able to digitally sign transactions for the Matic Network.   To do this, click on the 'Networks' dropdown at the very top of Metamask and change it from 'Main Ethereum Network' to 'Custom RPC' and use the following information: </p>
-                <br>
-                <ul>
-                  <li> Network Name: "Matic Network"</li>
-                  <li> New RPC URL: "https://rpc-mainnet.matic.network"</li>
-                  <li> Chain ID: "137" </li>
-                  <li> Symbol: "M" </li>
-                  <li> Block Explorer URL: "https://explorer.matic.network" </li>
-                </ul>
-                <br>
-                <p> Once you have added the Matic Network information to Metamask, switch Metamask back to 'Ethereum Mainnet Network'.  During the use of the Dapp, you may be asked to switch over to the 'Matic Mainnet Network' when you intend to digitally sign transactions for the Matic Network and now you are prepared to do so.  </p>
+              <p> hello  </p>
+
             </div>
-
-
-
           </div>
         </div>
       </div>
@@ -90,7 +73,7 @@ export default {
   components:{Footer},
   data() {
     return {
-      activeContent: 'thegame'
+      activeContent: 'topic1'
     }
   },
   methods: {

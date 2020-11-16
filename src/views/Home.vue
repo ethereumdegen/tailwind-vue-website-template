@@ -10,19 +10,14 @@
 		<carousel :per-page="1" :autoplay="true" :navigationEnabled="false" :paginationEnabled="false">
 
 			<slide>
-						<img src="@/assets/img/promo1.png" class="w-full"  />
+						 Slide 1
 			</slide>
 
 
 			<slide>
-				 		<img src="@/assets/img/production1.png" class="w-full"  />
+				 		  	Slide 2
 			</slide>
 
-			<slide>
-
-					<img src="@/assets/img/starmap1.png"  class="w-full" />
-
-			</slide>
 			</carousel>
 
 	</div>
@@ -30,17 +25,17 @@
 		<div class="w-full relative text-center py-12 px-12 md:p-0 md:text-right">
 
 			<div class='text-gray-200 text-lg'>
-			   Browser-based Space MMO
+			   Title
 			</div>
 
 			<div class='text-gray-400'>
-				 Cryptocurrency fuels the engines to war
+				 Api endpoint got: {{ myVariable }}
 			</div>
 
 
 			<div class="items-center p-6">
-				<a href="http://amber.ethereumspacewar.com" class="inline-block bg-yellow-500 text-black px-6 py-3 font-bold text-md hover:bg-gray-400"  >
-					Play the Alpha
+				<a href=" " class="inline-block bg-yellow-500 text-black px-6 py-3 font-bold text-md hover:bg-gray-400"  >
+					Button
 				</a>
 			</div>
 		<!--
@@ -74,9 +69,7 @@ import Navbar from './Navbar.vue'
 import Footer from './Footer.vue'
 
 
-const Web3 = require('web3');
-
-
+const axios = require('axios');
 
 export default {
   name: 'Home',
@@ -85,20 +78,24 @@ export default {
   },
   data () {
     return {
-      activeAccountAddress: null,
-			network: 'ethereum',
-			providerNetworkID: null,
-			assetName: '0xBTC'
+      myVariable: null
     }
   },
   created () {
 
-
+		this.fetchApiData()
 
 
   },
   methods: {
+			fetchApiData: async function(){
 
+				  let response = await axios.get('/api/v1/my_first_api_call')
+
+					this.myVariable = response.data.apiEndpointName
+
+					console.log('got response data', response.data )
+			}
 
 
   }
