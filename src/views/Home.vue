@@ -34,9 +34,9 @@
 
 
 			<div class="items-center p-6">
-				<a href=" " class="inline-block bg-yellow-500 text-black px-6 py-3 font-bold text-md hover:bg-gray-400"  >
+				<div class="cursor-pointer inline-block bg-yellow-500 text-black px-6 py-3 font-bold text-md hover:bg-gray-400" @click="fetchApiData()" >
 					Button
-				</a>
+				</div>
 			</div>
 		<!--
 			<h1 class="text-2xl mb-4">You abused the gift of Magic.</h1>
@@ -83,12 +83,14 @@ export default {
   },
   created () {
 
-		this.fetchApiData()
+
 
 
   },
   methods: {
 			fetchApiData: async function(){
+
+					console.log('start axios' )
 
 				  let response = await axios.get('/api/v1/my_first_api_call')
 

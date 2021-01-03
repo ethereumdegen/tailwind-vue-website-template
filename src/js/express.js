@@ -10,14 +10,20 @@ app.get('/', (req, res) => {
 });
 
 
+
 app.get('/api/v1/:apiEndpointName', async (req, res) => {
 
     let apiEndpointName = req.params.apiEndpointName
+
+    console.log('api output')
 
     let apiReponse = await ApiHelper.getResponseForApiRequest( apiEndpointName )
 
 
     res.send( apiReponse )
+
+
+
 });
 
 app.listen(port, () => console.log(`listening on port ${port}!`));
